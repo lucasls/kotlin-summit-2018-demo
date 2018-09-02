@@ -1,0 +1,16 @@
+{
+  "name": "gateway-antifraud-mock",
+  "version": "0.1.0",
+  "description": "Gateway and antifraud mock",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "lls.lucas@gmail.com",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "delay": "^3.1.0",
+    "express": "^4.16.3",
+    "uuid": "^3.3.2"
+  }
+}
