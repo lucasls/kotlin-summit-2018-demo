@@ -28,12 +28,12 @@ class PaymentService(
 
     fun createPaymentAttempt(valueCents: Int, restaurantId: String, cardInfo: CardInfo, orderItems: Iterable<Any>): PaymentAttempt {
         val paymentAttemptId = UUID.randomUUID().toString()
+
         var antifraudResult: AntifraudRepository.Result? = null
         var gatewayResult: GatewayRepository.Result? = null
         var status: PaymentAttempt.Status = PaymentAttempt.Status.PAID
 
-        block@
-        try {
+        block@ try {
 
             val restaurantConfig = restaurantConfigRepository.loadRestaurantConfig(restaurantId)
 
