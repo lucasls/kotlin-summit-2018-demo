@@ -3,13 +3,12 @@ package com.github.lucasls.kotlinsummitdemo2018.backendcoroutines.helper
 import io.reactiverse.pgclient.PgClient
 import io.reactiverse.pgclient.PgRowSet
 import io.reactiverse.pgclient.Tuple
-import io.vertx.core.AsyncResult
 import kotlinx.coroutines.experimental.CompletableDeferred
 
-private suspend fun <T> await(block: ((AsyncResult<T>) -> Unit) -> Unit): T {
-    val deferred = CompletableDeferred<T>()
+suspend fun PgClient.preparedQuery(sql: String, arguments: Tuple): PgRowSet {
+    val deferred = CompletableDeferred<PgRowSet>()
 
-    block { event ->
+    this.preparedQuery(sql, arguments) { event ->
         if (event.succeeded()) {
             deferred.complete(event.result())
         } else {
@@ -18,16 +17,4 @@ private suspend fun <T> await(block: ((AsyncResult<T>) -> Unit) -> Unit): T {
     }
 
     return deferred.await()
-}
-
-suspend fun PgClient.query(sql: String): PgRowSet {
-    return await {
-        this.query(sql, it)
-    }
-}
-
-suspend fun PgClient.preparedQuery(sql: String, arguments: Tuple): PgRowSet {
-    return await {
-        this.preparedQuery(sql, arguments, it)
-    }
 }
