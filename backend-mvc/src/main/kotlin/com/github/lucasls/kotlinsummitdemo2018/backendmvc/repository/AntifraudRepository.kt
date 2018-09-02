@@ -1,13 +1,8 @@
 package com.github.lucasls.kotlinsummitdemo2018.backendmvc.repository
 
-import com.fasterxml.jackson.databind.JsonNode
-import com.fasterxml.jackson.databind.node.JsonNodeFactory
-import com.fasterxml.jackson.databind.node.ObjectNode
-import mu.KotlinLogging
 import mu.KotlinLogging.logger
 import org.springframework.boot.web.client.RestTemplateBuilder
 import org.springframework.stereotype.Component
-import org.springframework.web.client.RestTemplate
 import org.springframework.web.client.postForObject
 
 private val log = logger { }

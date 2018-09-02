@@ -3,7 +3,6 @@ package com.github.lucasls.kotlinsummitdemo2018.backendreactive.helper
 import io.reactiverse.pgclient.PgClient
 import io.reactiverse.pgclient.PgRowSet
 import io.reactiverse.pgclient.Tuple
-import io.vertx.core.AsyncResult
 import reactor.core.publisher.Mono
 
 fun PgClient.preparedQuery(sql: String, arguments: Tuple): Mono<PgRowSet> {

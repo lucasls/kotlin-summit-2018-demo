@@ -3,7 +3,6 @@ package com.github.lucasls.kotlinsummitdemo2018.backendmvc.controller
 import com.fasterxml.jackson.databind.JsonNode
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.module.kotlin.treeToValue
-import com.github.lucasls.kotlinsummitdemo2018.backendmvc.domain.PaymentAttempt
 import com.github.lucasls.kotlinsummitdemo2018.backendmvc.domain.PaymentService
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
