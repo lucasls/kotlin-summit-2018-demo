@@ -1,14 +1,14 @@
-package com.github.lucasls.kotlinsummitdemo2018.backendmvc.domain
+package com.github.lucasls.kotlinsummitdemo2018.backendcoroutines.domain
 
-import com.github.lucasls.kotlinsummitdemo2018.backendmvc.repository.AntifraudRepository
-import com.github.lucasls.kotlinsummitdemo2018.backendmvc.repository.GatewayRepository
-import com.github.lucasls.kotlinsummitdemo2018.backendmvc.repository.PaymentAttemptRepository
-import com.github.lucasls.kotlinsummitdemo2018.backendmvc.repository.RestaurantConfigRepository
+import com.github.lucasls.kotlinsummitdemo2018.backendcoroutines.repository.AntifraudRepository
+import com.github.lucasls.kotlinsummitdemo2018.backendcoroutines.repository.GatewayRepository
+import com.github.lucasls.kotlinsummitdemo2018.backendcoroutines.repository.PaymentAttemptRepository
+import com.github.lucasls.kotlinsummitdemo2018.backendcoroutines.repository.RestaurantConfigRepository
 import mu.KotlinLogging
 import org.springframework.stereotype.Component
 import java.util.*
 
-private val log = KotlinLogging.logger { }
+private val log = KotlinLogging.logger {  }
 
 @Component
 class PaymentService(
@@ -26,7 +26,7 @@ class PaymentService(
         )
     }
 
-    fun createPaymentAttempt(valueCents: Int, restaurantId: String, cardInfo: CardInfo, orderItems: Iterable<Any>): PaymentAttempt {
+    suspend fun createPaymentAttempt(valueCents: Int, restaurantId: String, cardInfo: CardInfo, orderItems: Iterable<Any>): PaymentAttempt {
         val paymentAttemptId = UUID.randomUUID().toString()
 
         var antifraudResult: AntifraudRepository.Result? = null
@@ -80,6 +80,5 @@ class PaymentService(
         paymentAttemptRepository.insertPaymentAttempt(paymentAttempt)
 
         return paymentAttempt
-
     }
 }
