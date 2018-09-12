@@ -46,7 +46,7 @@ dependencies {
 	compile("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 	compile("org.jetbrains.kotlin:kotlin-reflect")
 	compile 'io.github.microutils:kotlin-logging:1.5.9'
-	compile('io.reactiverse:reactive-pg-client:0.10.0')
+	compile('io.reactiverse:reactive-pg-client:0.10.2')
 
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 	testCompile('io.projectreactor:reactor-test')

@@ -12,7 +12,7 @@ function randomInt(from, to) {
 app.use(express.json())
 
 app.post('/antifraud/validate', async (request, response) => {
-    await delay(randomInt(20, 300))
+    await delay(randomInt(400, 800))
 
     const r = Math.random()
     let status
@@ -32,7 +32,7 @@ app.post('/antifraud/validate', async (request, response) => {
 })
 
 app.post('/gateway/authorize', async (request, response) => {
-    await delay(randomInt(100, 1000))
+    await delay(randomInt(6000, 8000))
 
     const r = Math.random()
     let status

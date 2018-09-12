@@ -1,7 +1,10 @@
 package com.github.lucasls.kotlinsummitdemo2018.backendcoroutines.repository
 
 import com.github.lucasls.kotlinsummitdemo2018.backendcoroutines.domain.CardInfo
+import kotlinx.coroutines.experimental.*
 import kotlinx.coroutines.experimental.reactive.awaitFirst
+import kotlinx.coroutines.experimental.selects.select
+import kotlinx.coroutines.experimental.selects.selectUnbiased
 import org.springframework.stereotype.Component
 import org.springframework.web.reactive.function.client.WebClient
 import org.springframework.web.reactive.function.client.bodyToMono

@@ -10,13 +10,13 @@ class PgClientConfiguration {
 
     @Bean
     fun pgClient(): PgClient {
-        val options = PgPoolOptions().apply {
+        val options = PgPoolOptions().apply  {
             port = 5432
             host = "localhost"
             database = "postgres"
             user = "postgres"
             password = "postgres"
-            maxSize = 20
+            maxSize = 100
             connectTimeout = 1000
             idleTimeout = 10000
         }

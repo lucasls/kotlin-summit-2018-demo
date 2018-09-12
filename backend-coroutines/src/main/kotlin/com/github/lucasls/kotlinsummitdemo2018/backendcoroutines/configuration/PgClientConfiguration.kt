@@ -16,7 +16,7 @@ class PgClientConfiguration {
             database = "postgres"
             user = "postgres"
             password = "postgres"
-            maxSize = 20
+            maxSize = 100
             connectTimeout = 1000
             idleTimeout = 10000
         }

@@ -99,6 +99,7 @@ class PaymentService(
 
             paymentAttemptRepository.insertPaymentAttempt(paymentAttempt)
                 .map { paymentAttempt }
+                .doOnNext { log.info("Payment $paymentAttemptId created") }
         }
     }
 }

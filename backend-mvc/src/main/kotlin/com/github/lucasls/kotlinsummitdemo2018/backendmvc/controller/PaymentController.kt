@@ -18,7 +18,7 @@ class PaymentController(
     fun createPaymentAttempt(@RequestBody request: JsonNode): Map<String, Any?> {
 
         return mapOf(
-            "paymenAttempt" to paymentService.createPaymentAttempt(
+            "paymentAttempt" to paymentService.createPaymentAttempt(
                 valueCents = request["valueCents"].intValue(),
                 restaurantId = request["restaurantId"].textValue(),
                 cardInfo = objectMapper.treeToValue(request["card"]),

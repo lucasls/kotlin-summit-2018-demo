@@ -1,0 +1,25 @@
+{
+	"card": {
+		"number": "4111111111111111",
+		"holderName": "Lucas Santos",
+		"cvc": "737",
+		"expDate": "08/18",
+		"cpf": "01234567890"
+	},
+	"restaurantId": "95928823-981d-42f3-93d6-17c883d6de58",
+	"valueCents": 1234,
+	"orderItems": [
+		{
+			"name": "Risoto de funghi",
+			"qty": 1
+		},
+		{
+			"name": "Lasanha de bolonhesa",
+			"qty": 2
+		},
+		{
+			"name": "Suco de Laranja",
+			"qty": 3
+		}
+	]
+}

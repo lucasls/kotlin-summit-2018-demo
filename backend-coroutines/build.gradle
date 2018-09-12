@@ -44,12 +44,14 @@ repositories {
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter-webflux')
 	compile('com.fasterxml.jackson.module:jackson-module-kotlin')
+
 	compile("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 	compile("org.jetbrains.kotlin:kotlin-reflect")
     compile("org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlinCoroutinesVersion")
     compile("org.jetbrains.kotlinx:kotlinx-coroutines-reactor:$kotlinCoroutinesVersion")
-	compile 'io.github.microutils:kotlin-logging:1.5.9'
-	compile('io.reactiverse:reactive-pg-client:0.10.0')
+	
+	compile('io.github.microutils:kotlin-logging:1.5.9')
+	compile('io.reactiverse:reactive-pg-client:0.10.2')
 
 
 	testCompile('org.springframework.boot:spring-boot-starter-test')

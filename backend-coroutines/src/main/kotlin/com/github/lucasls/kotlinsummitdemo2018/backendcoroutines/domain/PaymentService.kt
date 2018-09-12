@@ -79,6 +79,8 @@ class PaymentService(
 
         paymentAttemptRepository.insertPaymentAttempt(paymentAttempt)
 
+        log.info("Payment $paymentAttemptId created")
+
         return paymentAttempt
     }
 }

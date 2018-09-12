@@ -19,7 +19,7 @@ class PaymentController(
     @PostMapping("/payment-attempts/")
     fun createPaymentAttempt(@RequestBody request: JsonNode): Mono<Map<String, Any?>> = mono {
         mapOf(
-            "paymenAttempt" to paymentService.createPaymentAttempt(
+            "paymentAttempt" to paymentService.createPaymentAttempt(
                 valueCents = request["valueCents"].intValue(),
                 restaurantId = request["restaurantId"].textValue(),
                 cardInfo = objectMapper.treeToValue(request["card"]),
